@@ -15,7 +15,7 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('name', ['Deutsch', 'Deutsch', 'Englisch', 'Französisch', 'Spanisch', 'Chinesisch', 'Hebräisch', 'Griechisch', 'Latein', 'Mathematik', 'Physik', 'Chemie', 'Physik+X', 'Biologie', 'BioChemie', 'Musik', 'Erdkunde', 'Geschichte', 'Sozialwissenschaften', 'Politik', 'Kunst', 'Philosophie', 'Katholische Religion', 'Evangelische Religion', 'Pädagogik']);
+            $table->enum('name', ['Deutsch', 'Englisch', 'Französisch', 'Spanisch', 'Chinesisch', 'Hebräisch', 'Griechisch', 'Latein', 'Mathematik', 'Physik', 'Chemie', 'Physik+X', 'Biologie', 'BioChemie', 'Musik', 'Erdkunde', 'Geschichte', 'Sozialwissenschaften', 'Politik', 'Kunst', 'Philosophie', 'Katholische Religion', 'Evangelische Religion', 'Pädagogik']);
             $table->text('description');
             $table->enum('type', ['Fach', 'Kurs']);
             $table->timestamps();

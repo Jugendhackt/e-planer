@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
 
-    public function users() {
+    public function admin() {
+
+        return $this->belongsTo('App\User');
+
+    }
+
+    public function students() {
 
         return $this->belongsToMany('App\User');
 
