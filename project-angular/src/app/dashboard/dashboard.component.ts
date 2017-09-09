@@ -12,13 +12,15 @@ export class DashboardComponent implements OnInit {
     public latestHomework: Homework;
 
     constructor(private homeworkService: HomeworkService) {
-      this.latestHomework = new Homework("", "");
+      this.latestHomework = null;
     }
 
     ngOnInit () {
       this.homeworkService.getHomework().then((homeworks) => {
         if (homeworks && homeworks.length > 0) {
           this.latestHomework = homeworks[0];
+        } else {
+          this.latestHomework = null;
         }
       });
     }

@@ -1,3 +1,23 @@
 #outer {
     margin-top: 15px;
 }
+
+.weather-part > img {
+  margin-left: 20px;
+}
+
+.weather-image-left {
+  width: 36px;
+  margin-left: -36px;
+  margin-top: 8px;
+}
+
+.weather-image-right {
+  margin-left: -36px;
+  width: 72px;
+}
+
+.weather-temperature {
+  font-size: 60px;
+  font-weight: 300;
+}

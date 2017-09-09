@@ -1,89 +1,104 @@
 <div id="outer">
-    <div class="row">
-        <div class="mx-auto">
-            <h1>Dashboard</h1>
-        </div>
+  <div class="row">
+    <div class="mx-auto">
+      <h1>Dashboard</h1>
     </div>
-    <div class="row">
-        <div class="col-10 mx-auto">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Montag</th>
-                  <th>Dienstag</th>
-                  <th>Mitwoch</th>
-                  <th>Donnerstag</th>
-                  <th>Freitag</th>
-                </tr>
-              </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Deutsch</td>
-                    <td>Philosophie</td>
-                    <td>Sport</td>
-                    <td>Physik</td>
-                    <td>Mathe</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Deutsch</td>
-                    <td>Philosophie</td>
-                    <td>Sport</td>
-                    <td>Physik</td>
-                    <td>Mathe</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Mathe</td>
-                    <td></td>
-                    <td>Sport</td>
-                    <td>Chemie</td>
-                    <td>Deutsch</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Englisch</td>
-                    <td>Mathe</td>
-                    <td></td>
-                    <td>Chemie</td>
-                    <td>Englisch</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Englisch</td>
-                    <td>Mathe</td>
-                    <td>Informatik</td>
-                    <td>Biologie</td>
-                    <td>Englisch</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Kunst</td>
-                    <td>Informatik</td>
-                    <td>Informatik</td>
-                    <td>Biologie</td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <table class="table">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Montag</th>
+          <th>Dienstag</th>
+          <th>Mitwoch</th>
+          <th>Donnerstag</th>
+          <th>Freitag</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Deutsch</td>
+          <td>Philosophie</td>
+          <td>Sport</td>
+          <td>Physik</td>
+          <td>Mathe</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Deutsch</td>
+          <td>Philosophie</td>
+          <td>Sport</td>
+          <td>Physik</td>
+          <td>Mathe</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Mathe</td>
+          <td></td>
+          <td>Sport</td>
+          <td>Chemie</td>
+          <td>Deutsch</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Englisch</td>
+          <td>Mathe</td>
+          <td></td>
+          <td>Chemie</td>
+          <td>Englisch</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Englisch</td>
+          <td>Mathe</td>
+          <td>Informatik</td>
+          <td>Biologie</td>
+          <td>Englisch</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Kunst</td>
+          <td>Informatik</td>
+          <td>Informatik</td>
+          <td>Biologie</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="row col-md-8 mx-auto">
-        <div class="card col-md-4 dashboard-card">
-            <div class="card-body">
-                <h4 class="card-title">Wetter</h4>
-                <p class="card-text">Heute ist es <span>15°C</span> und es ist <span>regnerisch</span> :(</p>
+  </div>
+  <div class="row col-md-8 mx-auto">
+    <div class="card col-md-4 dashboard-card">
+      <div class="card-body">
+        <h4 class="card-title">Wetter</h4>
+        <span class="card-text weather-part">
+          <span class="align-middle">
+            <div class="row">
+            <div class="col-4">
+              <span class="weather-temperature">15</span>
             </div>
-        </div>
-        <app-clock class="col-md-4 dashboard-card"></app-clock>
-        <div class="card col-md-4 dashboard-card">
-            <div class="card-body">
-                <h4 class="card-title">Hausaufgaben</h4>
-                <p class="card-text"><b>{{latestHomework.course}}</b> {{latestHomework.description}}</p>
-                <a routerLink="/homework" class="btn btn-primary">Details</a>
+            <div class="col-4">
+              <img src="/assets/weather/celsius.svg" class="weather-image-left" />
             </div>
-        </div>
+            <div class="col-4">
+              <img src="/assets/weather/021-rain-2.svg" class="weather-image-right" />
+            </div>
+          </div>
+          </span>
+        </span>
+      </div>
     </div>
+    <app-clock class="col-md-4 dashboard-card"></app-clock>
+    <div class="card col-md-4 dashboard-card">
+      <div class="card-body">
+        <h4 class="card-title" *ngIf="latestHomework">Hausaufgaben</h4>
+        <h4 class="card-title" *ngIf="!latestHomework">Keine Hausaufgaben ;)</h4>
+        <p class="card-text" *ngIf="latestHomework"><b>{{latestHomework.course}}</b> {{latestHomework.description}}</p>
+        <a routerLink="/homework" class="btn btn-primary" *ngIf="latestHomework">Details</a>
+      </div>
+    </div>
+  </div>
 </div>
