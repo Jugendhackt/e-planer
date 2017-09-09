@@ -1,6 +1,6 @@
 export class User {
-  private id: Number;
-  private name: String;
-  private email: String;
-  public roles: Array;
+  public id: Number;
+  public name: String;
+  public email: String;
+  public roles: Array<String>;
 }
