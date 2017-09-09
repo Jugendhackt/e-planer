@@ -15,8 +15,6 @@ class UserController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth:api');
-
         $this->middleware('permission:read-user|create-user|update-user|delete-user')->only('index');
         $this->middleware('permission:create-user')->only('create');
         $this->middleware('permission:create-user')->only('store');
