@@ -12,8 +12,6 @@ class HomeworkController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth:api');
-
         $this->middleware('permission:read-homework|create-homework|update-homework|delete-homework')->only('index');
         $this->middleware('permission:create-homework')->only('create');
         $this->middleware('permission:create-homework')->only('store');

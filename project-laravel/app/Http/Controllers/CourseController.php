@@ -13,8 +13,6 @@ class CourseController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth:api');
-
         $this->middleware('permission:read-course|create-course|update-course|delete-course')->only('index');
         $this->middleware('permission:create-course')->only('create');
         $this->middleware('permission:create-course')->only('store');
