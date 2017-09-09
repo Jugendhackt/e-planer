@@ -21,9 +21,11 @@ export class HomeworkExerciseComponent implements OnInit {
   }
 
   done() {
-    this.animator.setType('hinge').show(this.elementRef.nativeElement).then(() => {
+    this.animator.setType('hinge').show(this.elementRef.nativeElement);
+
+    setTimeout(() => {
       this.homeworkService.deleteHomework(this.homework);
-    });
+    }, 1000);
   }
 
 }

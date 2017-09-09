@@ -27,4 +27,9 @@ export class HomeworkService {
     return;
   }
 
+  public addHomework(homework: Homework) {
+    this.homework.push(homework);
+    return;
+  }
+
 }

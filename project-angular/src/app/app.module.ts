@@ -15,6 +15,7 @@ import { HomeworkExerciseComponent } from './homework-exercise/homework-exercise
 import { HomeworkComponent } from './homework/homework.component';
 import {HomeworkService} from "./homework.service";
 import {AnimatorModule} from "css-animator";
+import { HomeworkCreateModalComponent } from './homework-create-modal/homework-create-modal.component';
 
 const appRoutes: Routes = [
     {
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     LoginPageComponent,
     ClockComponent,
     HomeworkExerciseComponent,
-    HomeworkComponent
+    HomeworkComponent,
+    HomeworkCreateModalComponent
   ],
   imports: [
     BrowserModule,
