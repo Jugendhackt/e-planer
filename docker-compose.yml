@@ -30,3 +30,10 @@ services:
       - ./project-laravel/public:/var/www/html
     depends_on:
       - php
+  ng:
+    image: node:8
+    volumes:
+      - ./project-angular:/usr/src/app
+    ports:
+      - "8082:4200"
+    command: bash -c "cd /usr/src/app && npm i && npm start"

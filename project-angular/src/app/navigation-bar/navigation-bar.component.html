@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #0D47A1;">
+  <a class="navbar-brand" href="/">EPlaner</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLink="/index" routerLinkActive="active">
+        <a class="nav-link">Dashboard</a>
+      </li>
+      <li class="nav-item" routerLink="/homework" routerLinkActive="active">
+        <a class="nav-link">Homework</a>
+      </li>
+      <li class="nav-item" routerLink="/course" routerLinkActive="active">
+        <a class="nav-link">Course</a>
+      </li>
+      <li class="nav-item" routerLink="/lesson" routerLinkActive="active">
+        <a class="nav-link">Lesson</a>
+      </li>
+    </ul>
+    <!-- Nur der superuser -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="route('admin') }}">Admin</a>
+      </li>
+    </ul>
+  </div>
+</nav>
