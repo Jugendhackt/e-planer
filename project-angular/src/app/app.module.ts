@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { RouterModule, Routes } from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { IndexPageComponent } from './index-page/index-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {UserService} from "./user.service";
 
 const appRoutes: Routes = [
     {
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'login',
-        redirectTo: '/dashboard',
+        component: LoginPageComponent
     },
     { path: '',
         redirectTo: '/login',
@@ -40,9 +41,10 @@ const appRoutes: Routes = [
       appRoutes, {
         enableTracing: true
       }
-    )
+    ),
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -215,6 +215,8 @@ class UserTableSeeder extends Seeder
         $user->password = Hash::make('admin123');
         $user->save();
 
+        $adminRole = Role::whereName('admin');
+
         $user->attachRole($adminRole);
 
         $user->save();
