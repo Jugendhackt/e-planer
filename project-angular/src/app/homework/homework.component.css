@@ -1,3 +1,7 @@
 #outer {
     margin-top: 15px;
 }
+#add-homework {
+    position: fixed;
+    right: 5px;
+}
