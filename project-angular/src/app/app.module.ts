@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {UserService} from "./user.service";
+import { ClockComponent } from './clock/clock.component';
 
 const appRoutes: Routes = [
     {
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     NavigationBarComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
