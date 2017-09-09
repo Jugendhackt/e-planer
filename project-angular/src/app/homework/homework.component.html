@@ -2,9 +2,9 @@
   <div class="row">
     <h1 class="mx-auto">Hausaufgaben</h1>
   </div>
-  <div class="row">
-    <app-homework-exercise class="col-sm-4" title="Deutsch" description="S. 52, Aufgabe 3"></app-homework-exercise>
-    <app-homework-exercise class="col-sm-4" title="Mathe" description="S. 64, Aufgabe 9"></app-homework-exercise>
-    <app-homework-exercise class="col-sm-4" title="Englisch" description="S. 56, Aufgabe 14"></app-homework-exercise>
+  <div class="container">
+    <div class="row">
+      <app-homework-exercise [homework]="homework" *ngFor="let homework of homeworks" class="col-sm-4"></app-homework-exercise>
+    </div>
   </div>
 </div>

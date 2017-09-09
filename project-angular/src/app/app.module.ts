@@ -13,6 +13,8 @@ import {IsAuthenticated} from "./is-authenticated";
 import { ClockComponent } from './clock/clock.component';
 import { HomeworkExerciseComponent } from './homework-exercise/homework-exercise.component';
 import { HomeworkComponent } from './homework/homework.component';
+import {HomeworkService} from "./homework.service";
+import {AnimatorModule} from "css-animator";
 
 const appRoutes: Routes = [
     {
@@ -55,9 +57,10 @@ const appRoutes: Routes = [
         enableTracing: true
       }
     ),
-    FormsModule
+    FormsModule,
+    AnimatorModule
   ],
-  providers: [UserService, IsAuthenticated],
+  providers: [UserService, IsAuthenticated, HomeworkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

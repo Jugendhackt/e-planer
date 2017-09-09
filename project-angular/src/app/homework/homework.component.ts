@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HomeworkService} from "../homework.service";
+import {Homework} from "../homework";
 
 @Component({
   selector: 'app-homework',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeworkComponent implements OnInit {
 
-  constructor() { }
+  private homeworks: Homework[];
+
+  constructor(private homeworkService: HomeworkService) { }
 
   ngOnInit() {
+    this.homeworkService.getHomework().then((__homeworks) => {this.homeworks = __homeworks;});
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IsAuthenticated} from "../is-authenticated";
+import {Homework} from "../homework";
+import {HomeworkService} from "../homework.service";
 
 @Component({
     selector: 'app-dashboard',
@@ -7,6 +9,17 @@ import {IsAuthenticated} from "../is-authenticated";
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    constructor() { }
-    ngOnInit () {}
+    public latestHomework: Homework;
+
+    constructor(private homeworkService: HomeworkService) {
+      this.latestHomework = new Homework("", "");
+    }
+
+    ngOnInit () {
+      this.homeworkService.getHomework().then((homeworks) => {
+        if (homeworks && homeworks.length > 0) {
+          this.latestHomework = homeworks[0];
+        }
+      });
+    }
 }
