@@ -119,6 +119,4 @@ class LessonController extends Controller
         return Response::json([ 'success' => true ]);
 
     }
-
-    public function
 }
