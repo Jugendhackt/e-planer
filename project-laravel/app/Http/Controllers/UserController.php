@@ -6,6 +6,7 @@ use App\Permission;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,7 +14,8 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+
+        $this->middleware('auth:api');
 
         $this->middleware('permission:read-user|create-user|update-user|delete-user')->only('index');
         $this->middleware('permission:create-user')->only('create');
@@ -45,8 +47,8 @@ class UserController extends Controller
     public function create()
     {
 
-        $roles = Role::pluck('display_name', 'id');
-        return view('users.create', compact('roles'));
+//        $roles = Role::pluck('display_name', 'id');
+//        return view('users.create', compact('roles'));
 
     }
 
@@ -74,7 +76,7 @@ class UserController extends Controller
             $user->attachRole($value);
         }
 
-        return redirect()->route('users.index')->with('success', 'User created successfully');
+        return Response::json([ 'success' => true ]);
 
     }
 

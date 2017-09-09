@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-use App\Role;
+use App\Homework;
+use App\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CourseController extends Controller
+class LessonController extends Controller
 {
 
     public function __construct()
@@ -15,12 +15,12 @@ class CourseController extends Controller
 
         $this->middleware('auth:api');
 
-        $this->middleware('permission:read-course|create-course|update-course|delete-course')->only('index');
-        $this->middleware('permission:create-course')->only('create');
-        $this->middleware('permission:create-course')->only('store');
-        $this->middleware('permission:update-course')->only('edit');
-        $this->middleware('permission:update-course')->only('update');
-        $this->middleware('permission:delete-course')->only('delete');
+        $this->middleware('permission:read-lesson|create-lesson|update-lesson|delete-lesson')->only('index');
+        $this->middleware('permission:create-lesson')->only('create');
+        $this->middleware('permission:create-lesson')->only('store');
+        $this->middleware('permission:update-lesson')->only('edit');
+        $this->middleware('permission:update-lesson')->only('update');
+        $this->middleware('permission:delete-lesson')->only('delete');
 
     }
 
@@ -32,9 +32,9 @@ class CourseController extends Controller
     public function index(Request $request)
     {
 
-        $courses = $request->user()->courses();
+        $lessons = $request->user()->lessons();
 
-        return Response::json($courses);
+        return Response::json($lessons);
 
     }
 
@@ -46,7 +46,7 @@ class CourseController extends Controller
     public function create()
     {
 
-
+        // Internal routing
 
     }
 
@@ -61,7 +61,7 @@ class CourseController extends Controller
 
         $input = $request->all();
 
-        $course = Course::create($input);
+        $homework = Homework::create($input);
 
         return Response::json([ 'success' => true ]);
 
@@ -76,9 +76,9 @@ class CourseController extends Controller
     public function show($id)
     {
 
-        $course = Course::find($id);
+        $lesson = Lesson::find($id);
 
-        return Response::json($course);
+        return Response::json($lesson);
 
     }
 
@@ -90,7 +90,7 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -102,9 +102,7 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-
+        //
     }
 
     /**
@@ -116,9 +114,9 @@ class CourseController extends Controller
     public function destroy($id)
     {
 
-        User::find($id)->delete();
+        Lesson::find($id)->delete();
 
-        return Response::json(['success' => true]);
+        return Response::json([ 'success' => true ]);
 
     }
 }

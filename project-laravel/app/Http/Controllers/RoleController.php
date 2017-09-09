@@ -13,14 +13,14 @@ class RoleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:api');
 
-//        $this->middleware('permission:role-list|role-create|role-edit|role-delete')->only('index');
-//        $this->middleware('permission:role-create')->only('create');
-//        $this->middleware('permission:role-create')->only('store');
-//        $this->middleware('permission:role-edit')->only('edit');
-//        $this->middleware('permission:role-edit')->only('update');
-//        $this->middleware('permission:role-delete')->only('delete');
+        $this->middleware('permission:role-list|role-create|role-edit|role-delete')->only('index');
+        $this->middleware('permission:role-create')->only('create');
+        $this->middleware('permission:role-create')->only('store');
+        $this->middleware('permission:role-edit')->only('edit');
+        $this->middleware('permission:role-edit')->only('update');
+        $this->middleware('permission:role-delete')->only('delete');
     }
 
     /**

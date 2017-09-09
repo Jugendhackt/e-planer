@@ -72,7 +72,7 @@ class PermissionTableSeeder extends Seeder
                 'description'   => 'Updating User Properties'
             ],
             [
-                'name'          => 'delete-admin',
+                'name'          => 'delete-user',
                 'display_name'  => 'User Delete',
                 'description'   => 'Deleting User Properties'
             ],
