@@ -1,8 +1,8 @@
-/node_modules
+/project-angular/node_modules
 /public/hot
 /public/storage
 /storage/*.key
-/vendor
+/project-laravel/vendor
 /.idea
 /.vagrant
 Homestead.json
