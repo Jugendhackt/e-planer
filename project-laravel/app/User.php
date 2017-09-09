@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function homework() {
 
-        return $this->homework();
+        return $this->hasMany('App\Homework', 'user_id', 'id');
 
     }
 

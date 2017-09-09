@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Homework;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -28,11 +29,9 @@ class HomeworkController extends Controller
      */
     public function index(Request $request)
     {
+        $homework = Auth::user()->homework()->get();
 
-        $homework = $request->user()->homework();
-
-        return Response::json($homework);
-
+        return $homework;
     }
 
     /**
@@ -40,11 +39,9 @@ class HomeworkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-
-
-
+      dd($request);
     }
 
     /**
