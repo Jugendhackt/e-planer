@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/user', function (Request $request) {
+  if (!Auth::guest()) {
+    return ["user" => Auth::user(), "roles" => Auth::user()->roles()->get()];
+  } else {
+    abort(401, "Unauthenticated.");
+  }
 });

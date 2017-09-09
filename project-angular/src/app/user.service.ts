@@ -10,7 +10,19 @@ export class UserService {
   public isAuthenticated: Boolean;
   public user: User;
 
-  constructor() { }
+  constructor(private router: Router) {
+    this.checkLoginStatus();
+  }
+
+  private checkLoginStatus() {
+    axios.get(environment.eplanerApiServer + '/api/user', {withCredentials: true}).then((response) => {
+      this.isAuthenticated = true;
+      this.user = new User(response.data.user, response.data.roles);
+      this.router.navigate(['/dashboard']);
+    }).catch((e) => {
+
+    });
+  }
 
   public login(email: String, password: String) {
     return new Promise((resolve, reject) => {
