@@ -6,6 +6,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { RouterModule, Routes } from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { IndexPageComponent } from './index-page/index-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const appRoutes: Routes = [
   {
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavigationBarComponent,
     PageNotFoundComponent,
-    IndexPageComponent
+    IndexPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
