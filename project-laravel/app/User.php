@@ -35,4 +35,16 @@ class User extends Authenticatable
 
     }
 
+    public function lessons() {
+
+        return $this->courses()->lessons();
+
+    }
+
+    public function homework() {
+
+        return $this->homework();
+
+    }
+
 }

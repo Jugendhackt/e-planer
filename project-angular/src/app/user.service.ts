@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import axios from 'axios';
+import { User } from "./user";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class UserService {
 
   public isAuthenticated: Boolean;
+  public user: User;
 
   constructor() { }
 
@@ -15,8 +18,9 @@ export class UserService {
         email: email,
         password: password,
       }).then((response) => {
-        console.log(response.data);
-        resolve(response.data);
+        this.isAuthenticated = true;
+        this.user = new User(response.data.user, response.data.roles);
+        resolve(this.user);
       }).catch((e) => {
         if (e.response.status === 422) {
           resolve(e.response.data);

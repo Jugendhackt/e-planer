@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,4 +38,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+  /**
+   * Send the response after the user was authenticated.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  protected function sendLoginResponse(Request $request)
+  {
+    $request->session()->regenerate();
+
+    $this->clearLoginAttempts($request);
+
+    return $this->authenticated($request, $this->guard()->user())
+      ?: ["user" => Auth::user(), "roles" => Auth::user()->roles()->get()];
+  }
+
 }

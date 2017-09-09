@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-use App\Role;
+use App\Homework;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CourseController extends Controller
+class HomeworkController extends Controller
 {
 
     public function __construct()
@@ -15,12 +14,12 @@ class CourseController extends Controller
 
         $this->middleware('auth:api');
 
-        $this->middleware('permission:read-course|create-course|update-course|delete-course')->only('index');
-        $this->middleware('permission:create-course')->only('create');
-        $this->middleware('permission:create-course')->only('store');
-        $this->middleware('permission:update-course')->only('edit');
-        $this->middleware('permission:update-course')->only('update');
-        $this->middleware('permission:delete-course')->only('delete');
+        $this->middleware('permission:read-homework|create-homework|update-homework|delete-homework')->only('index');
+        $this->middleware('permission:create-homework')->only('create');
+        $this->middleware('permission:create-homework')->only('store');
+        $this->middleware('permission:update-homework')->only('edit');
+        $this->middleware('permission:update-homework')->only('update');
+        $this->middleware('permission:delete-homework')->only('delete');
 
     }
 
@@ -32,9 +31,9 @@ class CourseController extends Controller
     public function index(Request $request)
     {
 
-        $courses = $request->user()->courses();
+        $homework = $request->user()->homework();
 
-        return Response::json($courses);
+        return Response::json($homework);
 
     }
 
@@ -61,7 +60,7 @@ class CourseController extends Controller
 
         $input = $request->all();
 
-        $course = Course::create($input);
+        $homework = Homework::create($input);
 
         return Response::json([ 'success' => true ]);
 
@@ -76,9 +75,9 @@ class CourseController extends Controller
     public function show($id)
     {
 
-        $course = Course::find($id);
+        $homework = Homework::find($id);
 
-        return Response::json($course);
+        return Response::json($homework);
 
     }
 
@@ -90,7 +89,7 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -102,9 +101,7 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-
+        //
     }
 
     /**
@@ -116,7 +113,7 @@ class CourseController extends Controller
     public function destroy($id)
     {
 
-        User::find($id)->delete();
+        Homework::find($id)->delete();
 
         return Response::json(['success' => true]);
 

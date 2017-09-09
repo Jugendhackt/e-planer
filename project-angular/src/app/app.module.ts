@@ -9,13 +9,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {UserService} from "./user.service";
+import {IsAuthenticated} from "./is-authenticated";
 import { ClockComponent } from './clock/clock.component';
 
 const appRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent,
-        data: { title: 'Index' }
+        data: { title: 'Index' },
+        canActivate: [IsAuthenticated]
     },
     {
         path: 'login',
@@ -46,7 +48,7 @@ const appRoutes: Routes = [
     ),
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, IsAuthenticated],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
