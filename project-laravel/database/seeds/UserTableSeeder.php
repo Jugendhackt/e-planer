@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Permission;
 
 class UserTableSeeder extends Seeder
 {
@@ -211,11 +212,10 @@ class UserTableSeeder extends Seeder
 
         $user->name = 'Admin';
         $user->email = 'admin@eplaner.le-styx.net';
-        $user->password = Hash::make($input['123456']);
+        $user->password = Hash::make('admin123');
+        $user->save();
 
-        foreach ($permissions as $key => $value) {
-            $user->attachRole($value);
-        }
+        $user->attachRole($adminRole);
 
         $user->save();
 

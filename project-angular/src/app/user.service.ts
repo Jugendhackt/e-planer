@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import environment from '../environments/environment';
+import { environment } from '../environments/environment';
+import axios from 'axios';
 
 @Injectable()
 export class UserServiceService {
@@ -13,7 +14,7 @@ export class UserServiceService {
       email: email,
       password: password,
     }).then((response) => {
-
+      console.log(response.data);
     });
   }
 }
