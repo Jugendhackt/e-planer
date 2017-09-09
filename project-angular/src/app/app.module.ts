@@ -7,18 +7,23 @@ import { RouterModule, Routes } from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
-  {
-    path: 'index',
-    component: IndexPageComponent,
-    data: { title: 'Index' }
-  },
-  { path: '',
-    redirectTo: '/index',
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
+    {
+        path: 'dashboard',
+        component: DashboardComponent,
+        data: { title: 'Index' }
+    },
+    {
+        path: 'login',
+        redirectTo: '/dashboard',
+    },
+    { path: '',
+        redirectTo: '/login',
+        pathMatch: 'full'
+    },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -26,7 +31,7 @@ const appRoutes: Routes = [
     AppComponent,
     NavigationBarComponent,
     PageNotFoundComponent,
-    IndexPageComponent,
+    DashboardComponent,
     LoginPageComponent
   ],
   imports: [
