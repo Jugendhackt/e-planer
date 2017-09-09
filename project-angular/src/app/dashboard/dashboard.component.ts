@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IsAuthenticated} from "../is-authenticated";
 
 @Component({
   selector: 'app-dashboard',
