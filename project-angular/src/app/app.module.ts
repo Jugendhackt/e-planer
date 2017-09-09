@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {UserService} from "./user.service";
 import {IsAuthenticated} from "./is-authenticated";
 import { ClockComponent } from './clock/clock.component';
+import { HomeworkExerciseComponent } from './homework-exercise/homework-exercise.component';
+import { HomeworkComponent } from './homework/homework.component';
 
 const appRoutes: Routes = [
     {
@@ -18,6 +20,11 @@ const appRoutes: Routes = [
         component: DashboardComponent,
         data: { title: 'Index' },
         canActivate: [IsAuthenticated]
+    },
+    {
+        path: 'homework',
+        canActivate: [IsAuthenticated],
+        component: HomeworkComponent
     },
     {
         path: 'login',
@@ -37,7 +44,9 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     DashboardComponent,
     LoginPageComponent,
-    ClockComponent
+    ClockComponent,
+    HomeworkExerciseComponent,
+    HomeworkComponent
   ],
   imports: [
     BrowserModule,
