@@ -16,6 +16,7 @@ export class ClockComponent implements OnInit, OnDestroy {
         this.date = new Date();
         this._hours = this.date.getHours();
         this._minutes = this.date.getMinutes();
+        this.updateClock();
     }
 
     public hoursUpdate() {
@@ -34,14 +35,16 @@ export class ClockComponent implements OnInit, OnDestroy {
       }
     }
 
+    private updateClock() {
+      this.date = new Date();
+      this._hours = this.date.getHours();
+      this._minutes = this.date.getMinutes();
+      this.minutesUpdate();
+      this.hoursUpdate();
+    }
+
     ngOnInit() {
-        this.subscription = setInterval(() => {
-            this.date = new Date();
-            this._hours = this.date.getHours();
-            this._minutes = this.date.getMinutes();
-            this.minutesUpdate();
-            this.hoursUpdate();
-        }, 1000);
+        this.subscription = setInterval(() => {this.updateClock();}, 1000);
     }
 
     ngOnDestroy(): void {
