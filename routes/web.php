@@ -23,11 +23,12 @@ Route::get('/', 'PageController@getIndex')->name('index');
 
 Route::resource('/admin/roles', 'RoleController');
 Route::resource('/admin/users', 'UserController');
+Route::resource('/admin/courses', 'CourseController');
 
 Route::get('/admin', 'PageController@getAdmin')->name('admin');
 Route::get('/admin/homework', 'PageController@getAdminHomework')->name('adminhomework');
 //Route::get('/admin/users', 'PageController@getAdminUsers')->name('adminusers');
-Route::get('/admin/courses', 'PageController@getAdminCourses')->name('admincourses');
+//Route::get('/admin/courses', 'PageController@getAdminCourses')->name('admincourses');
 
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -7,9 +7,9 @@
 
 <body>
 
-@include('partials._messages')
-
 @include('partials._nav')
+
+@include('partials._messages')
 
 <!-- Main Container -->
 <div class="container">

@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div class="row">
+    <div class="row marginTop">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2> Show User</h2>

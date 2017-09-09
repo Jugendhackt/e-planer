@@ -28,11 +28,45 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('adminusers') }}" class="btn btn-secondary">View Users</a>
+                    <a href="{{ route('users.index') }}" class="btn btn-secondary">View Users</a>
                 </div>
             </div>
 
         </div>
+
+        <!-- Roles Statistics -->
+
+        <div class="col-md-6">
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">User Roles</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Statistics</h6>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><strong>Total roles:</strong></li>
+                                <li><strong>Some other properties:</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>{{ $options['roles']['total'] }}</li>
+                                <li>Test</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('roles.index') }}" class="btn btn-secondary">View Roles</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 2.5vh;">
 
         <!-- Homework Statistics -->
 
@@ -58,15 +92,11 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('adminhomework') }}" class="btn btn-secondary">View Homework</a>
+                    <a href="#" class="btn btn-secondary disabled">View Homework</a>
                 </div>
             </div>
 
         </div>
-
-    </div>
-
-    <div class="row" style="margin-top: 2.5vh;">
 
         <!-- Courses Statistics -->
 
@@ -92,7 +122,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('admincourses') }}" class="btn btn-secondary">View Courses</a>
+                    <a href="{{ route('courses.index') }}" class="btn btn-secondary">View Courses</a>
                 </div>
             </div>
 

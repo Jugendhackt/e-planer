@@ -33,6 +33,9 @@ class PageController extends Controller {
             'user' => [
                 'total' => DB::table('users')->count()
             ],
+            'roles' => [
+                'total' => DB::table('roles')->count()
+            ],
             'homework' => [
                 'total' => DB::table('homework')->count()
             ],

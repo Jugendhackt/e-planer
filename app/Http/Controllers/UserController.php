@@ -15,12 +15,12 @@ class UserController extends Controller
     {
         $this->middleware('auth');
 
-//        $this->middleware('permission:read-user|create-user|update-user|delete-user')->only('index');
-//        $this->middleware('permission:create-user')->only('create');
-//        $this->middleware('permission:create-user')->only('store');
-//        $this->middleware('permission:update-user')->only('edit');
-//        $this->middleware('permission:update-user')->only('update');
-//        $this->middleware('permission:delete-user')->only('delete');
+        $this->middleware('permission:read-user|create-user|update-user|delete-user')->only('index');
+        $this->middleware('permission:create-user')->only('create');
+        $this->middleware('permission:create-user')->only('store');
+        $this->middleware('permission:update-user')->only('edit');
+        $this->middleware('permission:update-user')->only('update');
+        $this->middleware('permission:delete-user')->only('delete');
 
     }
 

@@ -1,13 +1,13 @@
 @extends('main')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
+    <div class="row marginTop">
+        <div class="col-12">
+            <div class="float-left">
                 <h2>Create New Role</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+            <div class="float-right">
+                <a class="btn btn-info" href="{{ route('roles.index') }}">Back</a>
             </div>
         </div>
     </div>
@@ -21,27 +21,27 @@
             </ul>
         </div>
     @endif
-    {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+    {!! Form::open(array('route' => 'roles.store', 'method'=>'POST')) !!}
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                {!! Form::text('name', null, array('placeholder' => 'Name', 'class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-12">
             <div class="form-group">
                 <strong>Display Name:</strong>
-                {!! Form::text('display_name', null, array('placeholder' => 'Display Name','class' => 'form-control')) !!}
+                {!! Form::text('display_name', null, array('placeholder' => 'Display Name', 'class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                {!! Form::textarea('description', null, array('placeholder' => 'Description', 'class' => 'form-control', 'style'=>'height:100px')) !!}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-12">
             <div class="form-group">
                 <strong>Permission:</strong>
                 <br/>
@@ -52,8 +52,8 @@
                 @endforeach
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-12">
+            <button type="submit" class="btn btn-success btn-block" style="margin-bottom: 25vh;">Submit</button>
         </div>
     </div>
     {!! Form::close() !!}

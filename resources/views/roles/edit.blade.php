@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div class="row">
+    <div class="row marginTop">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Edit Role</h2>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success btn-block">Submit</button>
         </div>
     </div>
     {!! Form::close() !!}
