@@ -36,4 +36,4 @@ services:
       - ./project-angular:/usr/src/app
     ports:
       - "8082:4200"
-    command: bash -c "cd /usr/src/app && npm i && npm start"
+    command: bash -c "cd /usr/src/app && npm i && node node_modules/.bin/ng serve --host 0.0.0.0"
