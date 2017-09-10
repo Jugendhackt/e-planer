@@ -1,7 +1,12 @@
 #outer {
     margin-top: 15px;
 }
+
 #add-homework {
     position: fixed;
     right: 5px;
+}
+
+app-homework-exercise {
+  margin-top: 24px;
 }
