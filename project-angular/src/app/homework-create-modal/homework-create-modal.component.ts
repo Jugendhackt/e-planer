@@ -17,7 +17,7 @@ export class HomeworkCreateModalComponent implements OnInit {
   private description: String;
 
   constructor(private homeworkService: HomeworkService) {
-    this.subjects = ['Deutsch', 'Englisch', 'Französisch', 'Spanisch', 'Chinesisch', 'Hebräisch', 'Griechisch', 'Latein', 'Mathematik', 'Physik', 'Chemie', 'Physik+X', 'Biologie', 'BioChemie', 'Musik', 'Erdkunde', 'Geschichte', 'Sozialwissenschaften', 'Politik', 'Kunst', 'Philosophie', 'Katholische Religion', 'Evangelische Religion', 'Pädagogik'];
+    this.subjects = ['Informatik', 'Deutsch', 'Englisch', 'Französisch', 'Spanisch', 'Chinesisch', 'Hebräisch', 'Griechisch', 'Latein', 'Mathematik', 'Physik', 'Chemie', 'Physik+X', 'Biologie', 'BioChemie', 'Musik', 'Erdkunde', 'Geschichte', 'Sozialwissenschaften', 'Politik', 'Kunst', 'Philosophie', 'Katholische Religion', 'Evangelische Religion', 'Pädagogik'];
   }
 
   ngOnInit() {
